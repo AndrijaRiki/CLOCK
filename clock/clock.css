@@ -1,0 +1,87 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: radial-gradient(circle at center, lightblue, rgb(72, 72, 158), rgb(49, 49, 146), blue);
+}
+#sat{
+    position: relative;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    border: 10px solid white;
+}
+.br{
+    --rot: 0deg;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    font-size: 30pt;
+    font-weight: 600;
+    transform: rotate(var(--rot));
+}
+.br:nth-child(1){ --rot: 30deg}
+.br:nth-child(2){ --rot: 60deg}
+.br:nth-child(3){ --rot: 90deg}
+.br:nth-child(4){ --rot: 120deg}
+.br:nth-child(5){ --rot: 150deg}
+.br:nth-child(6){ --rot: 180deg}
+.br:nth-child(7){ --rot: 210deg}
+.br:nth-child(8){ --rot: 240deg}
+.br:nth-child(9){ --rot: 270deg}
+.br:nth-child(10){ --rot: 300deg}
+.br:nth-child(11){ --rot: 330deg}
+
+.kazaljka{
+    position: absolute;
+    height: 45%;
+    width: 10px;
+    background-color: black;
+    left: 50%;
+    bottom: 50%;
+    transform: translateX(-50%);
+    border-radius: 10%;
+}
+#cas{
+    --rot: 0;
+    width: 10px;
+    height: 35%;
+    background-color: black;
+    transform-origin: bottom;
+    transform: rotate(calc(var(--rot) * 1deg));
+}
+#min{
+    --rot: 0;
+    width: 7px;
+    height: 40%;
+    background-color: black;
+    transform-origin: bottom;
+    transform: rotate(calc(var(--rot) * 1deg));
+}
+#sek{
+    --rot: 0;
+    width: 4px;
+    height: 45%;
+    background-color: red;
+    transform-origin: bottom;
+    transform: rotate(calc(var(--rot) * 1deg));
+}
+
+#sat::after{
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: black;
+    z-index: 11;
+}
